@@ -24,13 +24,13 @@ public class SuporteTecnicoTest {
     @Test
     public void deveResolverProblemaHardwareNoNivel2() {
         SolicitacaoSuporte problemaHardware = new SolicitacaoSuporte(ProblemaHardware.getInstancia());
-        String resultado = suporteNivel1.resolverProblema(problemaHardware);  // Nível 1 não resolve, repassa para o Nível 2
+        String resultado = suporteNivel1.resolverProblema(problemaHardware);
         assertEquals("Problema resolvido por Suporte Técnico Nível 2", resultado);
     }
 
     @Test
     public void deveRetornarSemSolucaoSeNaoHaNivelSuperior() {
-        SuporteTecnico suporteIsolado = new SuporteTecnicoNivel1(null);  // Nível 1 sem superior
+        SuporteTecnico suporteIsolado = new SuporteTecnicoNivel1(null);
         SolicitacaoSuporte problemaHardware = new SolicitacaoSuporte(ProblemaHardware.getInstancia());
         String resultado = suporteIsolado.resolverProblema(problemaHardware);
         assertEquals("Sem solução disponível", resultado);
